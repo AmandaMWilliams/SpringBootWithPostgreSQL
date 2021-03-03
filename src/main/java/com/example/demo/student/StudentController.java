@@ -1,5 +1,6 @@
 package com.example.demo.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,10 +10,13 @@ import java.util.List;
 // Controllers contain all the resources for the API
 @RestController
 @RequestMapping(path = "api/v1/student")
-public class StudentController {
+public class StudentController { // API/Controller layer is responsible
+    // for CRUD operations.
 
     private final StudentService studentService;
 
+    @Autowired // magically instantiates the studentService on line 15
+    // and injects it into this constructor
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
