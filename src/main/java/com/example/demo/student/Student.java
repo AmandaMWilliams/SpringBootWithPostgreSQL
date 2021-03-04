@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Table // Connects to JPA
 public class Student {
     @Id
-    @SequenceGenerator(
+    @SequenceGenerator( // Hibernate associations
             name="student_sequence",
             sequenceName="student_sequence",
             allocationSize = 1
