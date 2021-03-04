@@ -1,5 +1,6 @@
 package com.example.demo.student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -13,16 +14,25 @@ public class StudentService { //The service layer contains all the
     // business logic for managing the students. It talks to the
     // API/Controller layer
 
+    private final StudentRepository studentRepository;
+
+    @Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
     public List<Student> getStudents(){
-        List studentList = new ArrayList();
-        Student amanda = new Student(
-                1L,
-                "Amanda",
-                "amanda@github.com",
-                LocalDate.of(1988, Month.DECEMBER, 19),
-                32
-        );
-        studentList.add(amanda);
-        return studentList;
+        return studentRepository.findAll();
+//
+//        List studentList = new ArrayList();
+//        Student amanda = new Student(
+//                1L,
+//                "Amanda",
+//                "amanda@github.com",
+//                LocalDate.of(1988, Month.DECEMBER, 19),
+//                32
+//        );
+//        studentList.add(amanda);
+//        return studentList;
     }
 }
