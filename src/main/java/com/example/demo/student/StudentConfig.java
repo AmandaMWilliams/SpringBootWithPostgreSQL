@@ -23,7 +23,7 @@ public class StudentConfig {
             Student christine = new Student(
                     "Christine",
                     "christine@github.com",
-                    LocalDate.of(1993, Month.JUNE, 9)
+                    LocalDate.of(1991, Month.JULY, 4)
             );
             studentList.add(amanda);
             studentList.add(christine);
