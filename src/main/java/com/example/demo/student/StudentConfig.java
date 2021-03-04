@@ -18,14 +18,12 @@ public class StudentConfig {
             Student amanda = new Student(
                     "Amanda",
                     "amanda@github.com",
-                    LocalDate.of(1988, Month.DECEMBER, 19),
-                    32
+                    LocalDate.of(1988, Month.DECEMBER, 19)
             );
             Student christine = new Student(
                     "Christine",
                     "christine@github.com",
-                    LocalDate.of(1992, Month.JUNE, 4),
-                    29
+                    LocalDate.of(1993, Month.JUNE, 9)
             );
             studentList.add(amanda);
             studentList.add(christine);
