@@ -23,7 +23,7 @@ public class StudentService { //The service layer contains all the
 
     public List<Student> getStudents(){
         return studentRepository.findAll();
-//
+// Moved to StudentConfig:
 //        List studentList = new ArrayList();
 //        Student amanda = new Student(
 //                1L,
