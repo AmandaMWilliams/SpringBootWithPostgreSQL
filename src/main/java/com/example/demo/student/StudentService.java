@@ -35,4 +35,8 @@ public class StudentService { //The service layer contains all the
 //        studentList.add(amanda);
 //        return studentList;
     }
+
+    public void addNewStudent(Student student) {
+        System.out.println(student);
+    }
 }
