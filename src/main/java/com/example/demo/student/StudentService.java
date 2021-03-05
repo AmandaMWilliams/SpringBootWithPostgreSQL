@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service // turns this class into a Bean (a class that has to be
 // instantiated) so that it can be used in StudentController line 15
@@ -37,6 +38,11 @@ public class StudentService { //The service layer contains all the
     }
 
     public void addNewStudent(Student student) {
-        System.out.println(student);
+        Optional<Student> studentOptional =
+                studentRepository.findStudentByEmail(student.getEmail());
+        if (studentOptional.isPresent()){
+            throw new IllegalStateException("Email Taken");
+        }
+        studentRepository.save(student);
     }
 }
