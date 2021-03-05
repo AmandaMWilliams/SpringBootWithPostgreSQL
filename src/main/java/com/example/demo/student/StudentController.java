@@ -25,7 +25,7 @@ public class StudentController { // API/Controller layer is responsible
     }
 
     @PostMapping //Add New Student (Create)
-    public void registerNewStudent(@RequestBody Student student){
+    public void registerNewStudent(@RequestBody Student student) {
         studentService.addNewStudent(student);
     }
 
@@ -33,7 +33,7 @@ public class StudentController { // API/Controller layer is responsible
     // (Update)
     public void updateStudent(@PathVariable("studentId") Long studentId,
                               @RequestParam(required = false) String name,
-                              @RequestParam(required = false) String email){
+                              @RequestParam(required = false) String email) {
         studentService.updateStudent(studentId, name, email);
     }
 

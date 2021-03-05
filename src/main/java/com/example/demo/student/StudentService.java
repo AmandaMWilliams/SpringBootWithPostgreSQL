@@ -55,7 +55,8 @@ public class StudentService { //The service layer contains all the
         studentRepository.deleteById(studentId);
     }
 
-    @Transactional
+    @Transactional // uses the Setters from the Model to check whether
+    // updates can be performed & if so, complete the updates in the DB
     public void updateStudent(Long studentId, String name, String email) {
         Student student =
                 studentRepository.findById(studentId)

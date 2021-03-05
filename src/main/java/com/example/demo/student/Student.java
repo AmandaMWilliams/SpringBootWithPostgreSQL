@@ -9,8 +9,8 @@ import java.time.Period;
 public class Student {
     @Id
     @SequenceGenerator( // Hibernate associations
-            name="student_sequence",
-            sequenceName="student_sequence",
+            name = "student_sequence",
+            sequenceName = "student_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
