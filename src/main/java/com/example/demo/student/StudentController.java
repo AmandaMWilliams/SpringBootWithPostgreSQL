@@ -24,9 +24,17 @@ public class StudentController { // API/Controller layer is responsible
         return studentService.getStudents();
     }
 
-    @PostMapping
+    @PostMapping //Add New Student (Create)
     public void registerNewStudent(@RequestBody Student student){
         studentService.addNewStudent(student);
+    }
+
+    @PutMapping(path = "{studentId}") //Update Existing Student Name
+    // (Update)
+    public void updateStudent(@PathVariable("studentId") Long studentId,
+                              @RequestParam(required = false) String name,
+                              @RequestParam(required = false) String email){
+        studentService.updateStudent(studentId, name, email);
     }
 
     @DeleteMapping(path = "{studentID}")
