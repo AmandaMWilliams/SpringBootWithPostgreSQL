@@ -1,10 +1,9 @@
 package com.example.demo;
 
 import com.example.demo.student.Student;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.time.LocalDate;
 import java.time.Month;
 
@@ -16,7 +15,7 @@ public class TestStudent {
         Student testStudent = new Student();
         //when
         //then
-        Assert.notNull(testStudent);
+        Assertions.assertNotNull(testStudent);
     }
 
     @Test
@@ -33,7 +32,7 @@ public class TestStudent {
         testStudent.setEmail(testEmail);
         testStudent.setDob(testDOB);
         //then
-        Assert.notNull(testStudent);
+        Assertions.assertNotNull(testStudent);
     }
 
     @Test
@@ -48,14 +47,19 @@ public class TestStudent {
         testStudent.setEmail(testEmail);
         testStudent.setDob(testDOB);
         //then
-        Assert.notNull(testStudent);
+        Assertions.assertNotNull(testStudent);
     }
 
     @Test
     public void getNameTest(){
         //given
+        Student testStudent = new Student();
+        String expectedName = "Amanda";
         //when
+        testStudent.setName(expectedName);
+        String actualName = testStudent.getName();
         //then
+        Assertions.assertEquals(expectedName, actualName);
     }
 
     @Test
