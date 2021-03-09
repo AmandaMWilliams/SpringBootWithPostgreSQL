@@ -75,18 +75,6 @@ public class TestStudent {
     }
 
     @Test
-    public void getAgeTest(){
-        //given
-        Student testStudent = new Student();
-        Integer expectedAge = 32;
-        //when
-        testStudent.setAge(expectedAge);
-        Integer actualAge = testStudent.getAge();
-        //then
-        Assertions.assertEquals(expectedAge, actualAge);
-    }
-
-    @Test
     public void getDOBTest(){
         //given
         Student testStudent = new Student();
