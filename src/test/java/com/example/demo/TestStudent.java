@@ -65,8 +65,13 @@ public class TestStudent {
     @Test
     public void getEmailTest(){
         //given
+        Student testStudent = new Student();
+        String expectedEmail = "amanda@code.com";
         //when
+        testStudent.setEmail(expectedEmail);
+        String actualEmail = testStudent.getEmail();
         //then
+        Assertions.assertEquals(expectedEmail, actualEmail);
     }
 
     @Test
